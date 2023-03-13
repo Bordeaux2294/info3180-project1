@@ -5,7 +5,7 @@
         <div class = "cardhead"><img src="{{ url_for('get_image', filename=propid.image_name) }}" /></div>
     <div class="cardbody">
         <h2>{{propid.title}}</h2>
-    <div class="pt"><p class = "price">{{propid.price}}</p>
+    <div class="pt"><p class = "price">${{propid.price}}</p>
         <p class = "type">{{propid.type}}</p></div>
         
     <p>{{propid.description}}</p>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class = "indiv-card">
+        <div class = "cardhead"><img src="{{ url_for('get_image', filename=propid.image_name) }}" /></div>
+    <div class="cardbody">
+        <h2>{{propid.title}}</h2>
+    <div class="pt"><p class = "price">{{propid.price}}</p>
+        <p class = "type">{{propid.type}}</p></div>
+        
+    <p>{{propid.description}}</p>
+    <div class ="bb"><p><i class='fa fa-bed'></i> {{propid.bedrooms}} Bedrooms</p>
+        <p><i class='fa fa-bath'></i> {{propid.bathrooms}} Bathrooms</p></div>
+    
+    <p><i class="bi bi-geo-alt"></i> {{propid.location}}</p>
+    <button type="submit" class="btn">Email Realtor</button>
+    </div>
+    
+    </div>
+{% endblock %}

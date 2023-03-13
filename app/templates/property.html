@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block main %}
+{% include 'flash_messages.html' %}
+<h1 class="display-5 fw-bold">Add Property</h1>
+<div class="p-5 mb-4 bg-light rounded-3 border">
+    <div class="container">
+        <form action="{{ url_for('properties') }}" class="form-login m-auto" method="post" enctype="multipart/form-data">
+            {{ form.csrf_token }}
+            <div class="form-div">
+                {{ form.title.label() }}
+                {{ form.title(class="text-box") }}
+        
+                {{ form.description.label() }}
+                {{ form.description(class="text-box") }}
+        
+                {{ form.bedrooms.label() }}
+                {{ form.bedrooms(class="text-box") }}
+        
+                {{ form.bathrooms.label() }}
+                {{ form.bathrooms(class="text-box") }}
+        
+                {{ form.price.label() }}
+                {{ form.price(class="text-box") }}
+        
+                {{ form.type.label() }}
+                {{ form.type(class="select-box") }}
+        
+                {{ form.location.label() }}
+                {{ form.location(class="text-box") }}
+        
+                {{ form.image.label() }}
+                {{ form.image }}
+        
+                {{form.submit(class="submit-button")}}
+                
+              </div>
+        
+    </div>
+  </div>
+{% endblock %}
+

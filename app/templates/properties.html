@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+<h1 class="page-header">All Images</h1>
+
+<ul class="props-container">
+    {% for property in properties %}
+        {%set id=property[0]%}
+        {%set image=property[1]%}
+        {%set title=property[2]%}
+        {%set location=property[3]%}
+        {%set price=property[4]%}
+
+        <div class="property-card">
+            <img src="{{ url_for('get_image', filename=image) }}" />
+            <h2>{{title}}</h2>
+            <p><i class="bi bi-geo-alt"></i>{{location}}</p>
+            <p>${{price}}</p>
+            <button type="button" class="btn btn-lg btn-primary w-100 mt-3" onclick= "window.location.href= '{{url_for('specific_property', propertyid=id)}}'">View Property</button>
+        </div>
+        
+        
+    {% endfor %}
+</ul>
+{% endblock %}
+
